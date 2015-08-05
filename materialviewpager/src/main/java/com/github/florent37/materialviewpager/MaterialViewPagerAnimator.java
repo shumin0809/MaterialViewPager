@@ -201,18 +201,16 @@ public class MaterialViewPagerAnimator {
 
             if (!settings.toolbarTransparent) {
                 // change color of toolbar & viewpager indicator &  statusBaground
-                setColorPercent(percent);
+                setColorPercent(0.0f);
             } else {
                 if (justToolbarAnimated) {
-                    if (toolbarJoinsTabs())
-                        setColorPercent(1);
-                    else if (lastPercent != percent) {
-                        animateColorPercent(0, 200);
+                    if (toolbarJoinsTabs()) {
+                        setColorPercent(1.0f);
+                    } else if (lastPercent != percent) {
+                        setColorPercent(0.0f);
                     }
                 }
             }
-
-            lastPercent = percent; //save the percent
 
             if (mHeader.mPagerSlidingTabStrip != null) { //move the viewpager indicator
                 //float newY = ViewHelper.getY(mHeader.mPagerSlidingTabStrip) + scrollTop;
@@ -371,6 +369,7 @@ public class MaterialViewPagerAnimator {
                     mHeader.mPagerSlidingTabStrip,
                     mHeader.mLogo
             );
+        lastPercent = percent;
     }
 
     private boolean toolbarJoinsTabs() {
