@@ -15,7 +15,6 @@ import android.widget.Toast;
 import com.crashlytics.android.Crashlytics;
 import com.github.florent37.materialviewpager.MaterialViewPager;
 import com.github.florent37.materialviewpager.header.HeaderDesign;
-import com.github.florent37.materialviewpager.sample.fragment.CarpaccioRecyclerViewFragment;
 import com.github.florent37.materialviewpager.sample.fragment.RecyclerViewFragment;
 import com.github.florent37.materialviewpager.sample.fragment.ScrollFragment;
 
@@ -67,12 +66,12 @@ public class MainActivity extends AppCompatActivity {
                 switch (position % 4) {
                     //case 0:
                     //    return RecyclerViewFragment.newInstance();
-                    //case 1:
-                    //    return RecyclerViewFragment.newInstance();
+                    case 1:
+                        return RecyclerViewFragment.newInstance();
                     //case 2:
                     //    return WebViewFragment.newInstance();
                     default:
-                        return CarpaccioRecyclerViewFragment.newInstance();
+                        return ScrollFragment.newInstance();
                 }
             }
 
@@ -107,15 +106,15 @@ public class MainActivity extends AppCompatActivity {
                                 "https://fs01.androidpit.info/a/63/0e/android-l-wallpapers-630ea6-h900.jpg");
                     case 1:
                         return HeaderDesign.fromColorResAndUrl(
-                                R.color.blue,
+                                R.color.green,
                                 "http://cdn1.tnwcdn.com/wp-content/blogs.dir/1/files/2014/06/wallpaper_51.jpg");
                     case 2:
                         return HeaderDesign.fromColorResAndUrl(
-                                R.color.cyan,
+                                R.color.green,
                                 "http://www.droid-life.com/wp-content/uploads/2014/10/lollipop-wallpapers10.jpg");
                     case 3:
                         return HeaderDesign.fromColorResAndUrl(
-                                R.color.red,
+                                R.color.green,
                                 "http://www.tothemobile.com/wp-content/uploads/2014/07/original.jpg");
                 }
 
