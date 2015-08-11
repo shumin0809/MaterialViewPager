@@ -636,5 +636,9 @@ public class MaterialViewPagerAnimator {
             followScrollToolbarLayout(0);
             onMaterialScrolled(visibleView, 0);
         }
+
+        if (toolbarJoinsTabs()) {
+            setColorPercent(1.0f);
+        }
     }
 }
